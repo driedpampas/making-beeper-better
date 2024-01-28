@@ -1,0 +1,237 @@
+/* 
+Code below was created by TGRush and is used under the GPL-3 License
+https://codeberg.org/TGRush/beeper-tweaks/src/branch/main/header-online.css
+Modified by contributors to https://github.com/ngencokamin/beeper-oneline.
+*/
+
+.bp_LeftPanel {
+    display: grid;
+    grid-template:
+    "header search"
+    "chats chats"
+    "forward forward"
+    "fwd-btn fwd-btn";
+
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 50px auto min-content min-content;
+    align-items: center;
+}
+
+/* Help, Settings, DND Header */
+.bp_LeftPanel > *:nth-child(1) {
+    width: fit-content;
+    height: min-content;
+    grid-area: header;
+    align-self: start;
+}
+
+/* Searchbar & Pen icon */
+.bp_LeftPanel > *:nth-child(2) {
+    width: fit-content;
+    height: min-content;
+    grid-area: search;
+}
+
+/* Chats (favorites and inbox) */
+.bp_LeftPanel > *:nth-child(3) {
+    grid-area: chats;
+}
+
+/* * */
+
+/* Set icon to stay in one place */
+.bp_TitleBar ~ .mx_MatrixChat > div:nth-child(1) > div:nth-child(1) {
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    z-index: 2;
+}
+
+/* Align Chat app sidebar */
+.bp_TitleBar ~ .mx_MatrixChat > div:nth-child(1) > div:nth-child(2) {
+    margin-top: 8px;
+}
+
+/* Remove padding if sidebar is open */
+div.noselect:first-of-type:not([class$="noselect"]) ~ .bp_LeftPanel > div:nth-child(1) {
+    padding: 0;
+    transition: all 0.1s linear;
+}
+
+/* Add margin if sidebar is closed */
+div.noselect:first-of-type[class$="noselect"] ~ .bp_LeftPanel > div:nth-child(1) {
+    margin-left: 33px;
+    transition: all .1s linear;
+}
+
+/* Set min width for side panel */
+/* Prevents searchbar getting smushed */
+.bp_LeftPanel {
+    min-width: 350px;
+    container-type: inline-size;
+}
+
+/* Searchbar & Pen icon */
+.bp_LeftPanel > *:nth-child(2) {
+    width: auto;
+    margin-left: -12cqw;
+    transition: all .2s linear;
+}
+
+/* Resize by Container */
+@container (min-width: 375px) {
+    .bp_LeftPanel > *:nth-child(2) {
+        margin-left: -14cqw;
+    }
+}
+
+@container (min-width: 400px) {
+    .bp_LeftPanel > *:nth-child(2) {
+        margin-left: -15cqw;
+    }
+}
+
+@container (min-width: 450px) {
+    .bp_LeftPanel > *:nth-child(2) {
+        margin-left: -17cqw;
+    }
+}
+
+@container (min-width: 500px) {
+    .bp_LeftPanel > *:nth-child(2) {
+        margin-left: -20cqw;
+    }
+}
+
+/* Fix Forwarding menu*/
+
+.bp_Header + div > p {
+    display: none !important;
+}
+
+.bp_Header:has(+ div p) {
+    margin-left: 6.66px !important;
+}
+
+.bp_LeftPanel > *:nth-child(4){
+    display: flex;
+    grid-area: forward;
+    min-height: fit-content;
+    min-width: auto;
+    grid-column: 1 / 3;
+    grid-row: 3;
+}
+
+.bp_LeftPanel > *:nth-child(5) {
+    grid-area: fwd-btn;
+    min-height: fit-content;
+    min-width: auto;
+    grid-column: 1 / 3;
+    grid-row: 4;
+}
+
+.bp_LeftPanel:has(div:nth-child(4) > * > .mx_EventTile_messageOut) > *:nth-child(2) ~ .bp_LeftPanel_contentWrapper--search {
+    --offset: -98% !important;
+}
+
+/* .bp_LeftPanel:has(div:nth-child(4) > * > .mx_EventTile_messageOut) > *:nth-child(2) ~ .bp_LeftPanel > div:nth-child(4) > div > div > div > div > div:nth-child(2) {
+    margin-left: 20px;
+} */
+
+/* ----------------------------------My own tweaks---------------------------------- */
+
+/* Remove the Help button in header*/
+.bp_LeftPanel > *:nth-child(1) > *:nth-child(1) > *:nth-child(3), .bp_LeftPanel > *:nth-child(1) > *:nth-child(1) > *:nth-child(4) {
+    display: none;
+}
+
+.bp_LeftPanel > *:nth-child(1) {
+    width: 48px;
+    height: 31px;
+}
+
+/* Fix stack-looking button overlapping */
+.bp_TitleBar ~ .mx_MatrixChat > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
+    padding: 5px;
+    width: 30px;
+}
+
+.bp_TitleBar ~ .mx_MatrixChat > div:nth-child(1) > div:nth-child(1) {
+    width:35px;
+}
+
+/* Appearance tab fixes*/
+/* Make Custom CSS box bigger*/
+.mx_AppearanceUserSettingsTab .mx_Field {
+    width: 650px;
+    height: 350px;
+}
+
+/* Minimize spacing */
+.mx_AppearanceUserSettingsTab .mx_SettingsTab_SubHeading {
+    margin-bottom: 0px;
+}
+
+.mx_AppearanceUserSettingsTab .mx_SettingsTab_subheading {
+    margin-top: 10px;
+}
+
+.mx_AppearanceUserSettingsTab .mx_SettingsFlag {
+    margin-bottom: 4px;
+}
+
+.mx_AppearanceUserSettingsTab > div:nth-child(7) {
+    margin-top: 0px;
+}
+
+/* side-by-side theme selectors */
+.mx_ThemeSelectors {
+    display:flex;
+    margin-top: 10px;
+    width: 200px;
+    height: 30px;
+}
+
+.mx_ThemeSelectors > label {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.mx_ThemeSelectors > label > div:nth-child(2) {
+    height: 16px;
+}
+
+.mx_TabbedView_tabPanel > div > div {
+    padding-bottom: 0px;
+}
+
+/* remove invite to beeper button */
+.bp_MainPanel > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div.mx_RoomHeader_rightActions > span > :nth-child(2) > div:nth-child(1) {
+    display: none;
+}
+
+/* style app controls */
+/* .bp_col {
+    margin-top: 5px !important;
+}
+
+.bp_TitleBar {
+    display: none;
+}
+
+.bp_TitleBar > .AppControls {
+    display: flex !important; 
+    height: 32px !important;
+} */
+
+/* chat networks */
+#chatNetworksContent > div > div:nth-child(3) > div > div:nth-child(2) {
+    padding-bottom: 0px !important;
+}
+
+#chatNetworksContent > div > div:nth-child(3) {
+    margin-bottom: 0px !important;
+}
