@@ -8,7 +8,7 @@ Builds on [TGRush](https://codeberg.org/TGRush)'s tweaks and me, Simon and [ngen
 
 ## Inspiration
 
-This repo contains patches/tweaks for the Beeper Linux desktop client UI. May work on Windows as well although there are no guarantees.
+This repo contains patches/tweaks for the Linux desktop client UI. May work on Windows as well although there are no guarantees.
 Based on the oneline CSS tweak created by [TGRush on Codeberg](https://codeberg.org/TGRush/beeper-tweaks/src/branch/main/header-online.css) amd extended by [ngencokamin](https://github.com/ngencokamin), which is used under the GPL-3 License
 
 ## Getting Started
