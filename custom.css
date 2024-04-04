@@ -164,6 +164,7 @@ html[theme="dark"] {
 }
 
 /* Code below is from https://github.com/beeper/themes/blob/main/legacy/utility/minimal-titlebar-right.css with modification to make buttons fill the header, used under the Apache2.0 license */
+
 :root {
     --app-control-wide: 138px;
     --app-control-right: 0px;
@@ -193,6 +194,8 @@ html[theme="dark"] {
 
 .AppControls-button svg {
     width: 55px;
+    height: 55px;
+}
 
 /* Android-esque Theme for Beeper. */
 /* Copyright 2024 @ Simon Müller, simeonlps@proton.me */
@@ -337,7 +340,7 @@ Copyright @driedpampas 2023-2024
 }
 
 /* remove invite to beeper button */
-.bp_MainPanel > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div.mx_RoomHeader_rightActions > span > :nth-child(2) > div:nth-child(1) {
+.bp_MainPanel > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div.mx_RoomHeader_wrapper > div.mx_RoomHeader_rightActions > span > span.mx_RoomHeader_rightActions_static > div:nth-child(1) {
     display: none;
 }
 
