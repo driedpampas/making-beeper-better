@@ -103,7 +103,131 @@ div.noselect:first-of-type[class$="noselect"] ~ .bp_LeftPanel > div:nth-child(1)
     }
 }
 
-/*
+/* Code below is from https://github.com/beeper/themes/blob/main/themes/bubbly.css used under the Apache2.0 license. */
+
+html {
+    --theme-my-bubble-color: #58347c;
+    --theme-accent-color: #a675d8;
+    --theme-their-bubble-color: #efefef;
+    --theme-chat-background-color: #FFFFFF;
+    --theme-chat-background-image: url("https://imjosh.in/images/beeper/bubbly-bg-light.png");
+
+    --theme-borderwidth: 0;
+    --theme-borderradius: 13px;
+    --theme-bubble-padding-v: 8px;
+    --theme-bubble-padding-h: 12px;
+
+    --chatview__backgroundcolor: var(--theme-chat-background-color);
+    --chatview__backgroundimage: var(--theme-chat-background-image);
+
+    --chatview__fontsize: 2.2rem;
+    --chatview__lineheight: var(--chatview__fontsize);
+    --chatview__paddingleft: var(--size-spacing-400);
+    --chatview__paddingright: var(--size-spacing-400);
+
+    --chatview__composer__borderradius: var(--theme-borderradius);
+    --chatview__composer__backgroundcolor: #efefef;
+
+    --chatview__message_group__margintop: 12px;
+
+    --chatview__message_tail__opacity: 1;
+    --chatview__message_tail__color: var(--theme-their-bubble-color);
+    --chatview__message__backgroundcolor: var(--theme-their-bubble-color);
+    --chatview__message__fontcolor: #141414;
+
+    --chatview__message__paddingleft: var(--theme-bubble-padding-h);
+    --chatview__message__paddingright: var(--theme-bubble-padding-h);
+    --chatview__message__paddingtop: var(--theme-bubble-padding-v);
+    --chatview__message__paddingbottom: var(--theme-bubble-padding-v);
+    --chatview__message__marginleft: 4px;
+    --chatview__message__marginright: 4px;
+    --chatview__message__margintop: 4px;
+
+    --chatview__message__borderradius: var(--theme-borderradius);
+    --chatview__message_sharp__borderradius: var(--theme-borderradius);
+
+    --chatview__message_sender_name__alpha: 1;
+    --chatview__message_sender_name__lightness: 35%;
+
+    --chatview__message_self__backgroundcolor: var(--theme-my-bubble-color);
+    --chatview__readmarker__fontcolor: var(--theme-accent-color);
+}
+
+html[theme="dark"] {
+    --theme-their-bubble-color: #232326;
+    --theme-chat-background-color: #0f0f0f;
+    --theme-chat-background-image: url("https://imjosh.in/images/beeper/bubbly-bg-dark.png");
+
+    --chatview__composer__backgroundcolor: #232326;
+    --chatview__message__fontcolor: #F6F6F6;
+    --chatview__message_sender_name__lightness: 65%;
+}
+
+/* Code below is from https://github.com/beeper/themes/blob/main/legacy/utility/minimal-titlebar-right.css with modification to make buttons fill the header, used under the Apache2.0 license */
+:root {
+    --app-control-wide: 138px;
+    --app-control-right: 0px;
+    --app-control-top: 0px;
+}
+
+.AppControls {
+    position: absolute;
+    top: var(--app-control-top);
+    z-index: 1000;
+    right: var(--app-control-right);
+    height: 55px;
+}
+.AppControls-button { 
+    height: 55px; 
+    width: 55px;
+}
+
+.mx_RoomHeader_rightActions {
+    position: relative;
+    right: calc(var(--app-control-wide) + 22px *2);
+}
+
+.mx_RoomHeader_name {
+    max-width: 345px;
+}
+
+.AppControls-button svg {
+    width: 55px;
+
+/* Android-esque Theme for Beeper. */
+/* Copyright 2024 @ Simon Müller, simeonlps@proton.me */
+/* You should have gotten a copy of the GPLv3 with this stylesheet */
+/* If not, visit https://www.gnu.org/licenses/gpl-3.0.txt */
+
+html {
+    /* Colors! */
+    --chatview__message_self__backgroundcolor: #1550f9!important;
+
+    /* Layout and other style changes*/
+    --chatview__message__borderradius: 2rem!important;
+    --chatview__message_sharp__borderradius: 2rem!important;
+    --chatview__message__paddingleft: 12px;
+    --chatview__message__paddingtop: 8px;
+    --chatview__message__paddingright: 10px;
+    --chatview__message__paddingbottom: 8px;
+    --chatview__message__margintop: 2px;
+    --chatview__message_tail__opacity: 0;
+    --chatview__composer__borderradius: 2em;
+}
+
+/* hacky workarounds :melt: */
+html[theme = "dark"] .bp_LeftPanel,
+html[theme = "dark"] .mx_MatrixChat > div.noselect,
+html[theme="dark"] .mx_HomePage {
+    background-color: black!important;
+}
+
+html[theme = "dark"] {
+    --chatview__backgroundcolor: black!important;
+    --space-bar-bg: #0e0e10!important;
+}
+    
+/* now for my creature comforts
 Code below is licensed under GPLv3. Grab a copy at https://www.gnu.org/licenses/gpl-3.0.txt
 Copyright @driedpampas 2023-2024
 */
@@ -136,7 +260,7 @@ Copyright @driedpampas 2023-2024
 }
 
 .bp_LeftPanel:has(div:nth-child(4) > * > .mx_EventTile_messageOut) > *:nth-child(2) ~ .bp_LeftPanel_contentWrapper--search {
-    --offset: -98% !important;
+    --offset: -100% !important;
 }
 
 /* .bp_LeftPanel:has(div:nth-child(4) > * > .mx_EventTile_messageOut) > *:nth-child(2) ~ .bp_LeftPanel > div:nth-child(4) > div > div > div > div > div:nth-child(2) {
@@ -216,20 +340,6 @@ Copyright @driedpampas 2023-2024
 .bp_MainPanel > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div.mx_RoomHeader_rightActions > span > :nth-child(2) > div:nth-child(1) {
     display: none;
 }
-
-/* style app controls */
-/* .bp_col {
-    margin-top: 5px !important;
-}
-
-.bp_TitleBar {
-    display: none;
-}
-
-.bp_TitleBar > .AppControls {
-    display: flex !important; 
-    height: 32px !important;
-} */
 
 /* chat networks */
 #chatNetworksContent > div > div:nth-child(3) > div > div:nth-child(2) {
