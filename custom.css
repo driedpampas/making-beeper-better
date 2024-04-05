@@ -174,10 +174,12 @@ html[theme="dark"] {
 .AppControls {
     position: absolute;
     top: var(--app-control-top);
-    z-index: 1000;
     right: var(--app-control-right);
-    height: 55px;
+    height: 55px !important;
+    z-index: 10000;
+    max-height: fit-content !important;
 }
+
 .AppControls-button { 
     height: 55px; 
     width: 55px;
@@ -195,6 +197,10 @@ html[theme="dark"] {
 .AppControls-button svg {
     width: 55px;
     height: 55px;
+}
+
+.bp_invisibleDraggableHeader {
+    display: none;
 }
 
 /* Android-esque Theme for Beeper. */
@@ -262,13 +268,19 @@ Copyright @driedpampas 2023-2024
     grid-row: 4;
 }
 
+/* why is the panel to the side */
+
 .bp_LeftPanel:has(div:nth-child(4) > * > .mx_EventTile_messageOut) > *:nth-child(2) ~ .bp_LeftPanel_contentWrapper--search {
     --offset: -100% !important;
 }
 
-/* .bp_LeftPanel:has(div:nth-child(4) > * > .mx_EventTile_messageOut) > *:nth-child(2) ~ .bp_LeftPanel > div:nth-child(4) > div > div > div > div > div:nth-child(2) {
-    margin-left: 20px;
-} */
+.bp_LeftPanel:not(:has(div:nth-child(4) > * > .mx_EventTile_messageOut)) > *:nth-child(2) ~ .bp_LeftPanel_contentWrapper--search {
+    --offset: -100% !important;
+}
+
+.bp_LeftPanel:not(:has(div:nth-child(4) > * > .mx_EventTile_messageOut)) > *:nth-child(2) ~ .bp_LeftPanel_contentWrapper {
+    --offset: -10% !important;
+}
 
 /* Remove the Help button in header*/
 .bp_LeftPanel > *:nth-child(1) > *:nth-child(1) > *:nth-child(3), .bp_LeftPanel > *:nth-child(1) > *:nth-child(1) > *:nth-child(4) {
