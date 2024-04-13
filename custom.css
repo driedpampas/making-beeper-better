@@ -163,7 +163,8 @@ html[theme="dark"] {
     --chatview__message_sender_name__lightness: 65%;
 }
 
-/* Code below is from https://github.com/beeper/themes/blob/main/legacy/utility/minimal-titlebar-right.css with modification to make buttons fill the header, used under the Apache2.0 license */
+/* Code below is from https://github.com/beeper/themes/blob/main/legacy/utility/minimal-titlebar-right.css 
+with modifications to make buttons fill the header, used under the Apache2.0 license */
 
 :root {
     --app-control-wide: 138px;
@@ -176,7 +177,7 @@ html[theme="dark"] {
     top: var(--app-control-top);
     right: var(--app-control-right);
     height: 55px !important;
-    z-index: 10000;
+    z-index: 9999;
     max-height: fit-content !important;
 }
 
@@ -278,7 +279,7 @@ Copyright @driedpampas 2023-2024
     --offset: -100% !important;
 }
 
-.bp_LeftPanel:not(:has(div:nth-child(4) > * > .mx_EventTile_messageOut)) > *:nth-child(2) ~ .bp_LeftPanel_contentWrapper {
+.bp_LeftPanel:not(:has(*:nth-child(2) ~ .bp_LeftPanel_contentWrapper-search)) > *:nth-child(2) ~ .bp_LeftPanel_contentWrapper {
     --offset: -10% !important;
 }
 
