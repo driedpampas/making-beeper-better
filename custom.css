@@ -188,7 +188,7 @@ with modifications to make buttons fill the header, used under the Apache2.0 lic
 
 .mx_RoomHeader_rightActions {
     position: relative;
-    right: calc(var(--app-control-wide) + 22px *2);
+    right: calc(var(--app-control-wide) + 30px *2);
 }
 
 .mx_RoomHeader_name {
@@ -201,7 +201,7 @@ with modifications to make buttons fill the header, used under the Apache2.0 lic
 }
 
 .bp_invisibleDraggableHeader {
-    display: none;
+    right: calc(var(--app-control-wide) + 30px *2);
 }
 
 /* Android-esque Theme for Beeper. */
